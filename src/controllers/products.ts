@@ -1,6 +1,6 @@
 import z from "zod";
 import { NotFoundError } from "../errors.js";
-import ProductORM from "../../productsState.js";
+import ProductORM from "../productsState.js";
 import { Product, ProductCategory } from "../types/product.js";
 import { createAction } from "../utils/createAction.js";
 

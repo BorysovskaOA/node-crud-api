@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { Product, ProductData } from "./src/types/product.js";
+import { Product, ProductData } from "./types/product.js";
 
 let products: Product[] = [];
 

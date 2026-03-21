@@ -13,6 +13,16 @@ export const errorHandler = async (
     });
   }
 
+  if (
+    error.statusCode === 400 &&
+    error.code === "FST_ERR_CTP_INVALID_JSON_BODY"
+  ) {
+    return reply.status(400).send({
+      error: "Bad Request",
+      message: "Invalid JSON format",
+    });
+  }
+
   if (error.validation) {
     return reply.status(400).send({
       error: "Bad Request",
