@@ -5,9 +5,11 @@
   "license": "ISC",
   "author": "BorysovskaOA",
   "type": "module",
-  "main": "src/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start:dev": "nodemon --watch src -e ts,json --exec \"node --env-file=.env --import tsx ./src/app.ts\""
+    "build": "rm -rf dist && tsc",
+    "start:prod": "npm run build && node --env-file=.env dist/app.js",
+    "start:dev": "tsx watch --env-file=.env src/app.ts"
   },
   "dependencies": {
     "fastify": "^5.8.2",
@@ -16,7 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
-    "nodemon": "^3.1.14",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
