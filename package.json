@@ -1,0 +1,22 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "BorysovskaOA",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "start:dev": "nodemon --watch src -e ts,json --exec \"node --env-file=.env --import tsx ./src/app.ts\""
+  },
+  "dependencies": {
+    "fastify": "^5.8.2",
+    "fastify-type-provider-zod": "^6.1.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "nodemon": "^3.1.14",
+    "tsx": "^4.21.0"
+  }
+}
