@@ -9,7 +9,9 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start:prod": "npm run build && node --env-file=.env dist/app.js",
-    "start:dev": "tsx watch --env-file=.env src/app.ts"
+    "start:dev": "tsx watch --env-file=.env src/app.ts",
+    "test": "node --import tsx --test test/**/*.test.ts",
+    "test:watch": "node --import tsx --test --watch test/**/*.test.ts"
   },
   "dependencies": {
     "fastify": "^5.8.2",
