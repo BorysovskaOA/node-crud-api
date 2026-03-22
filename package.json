@@ -5,11 +5,12 @@
   "license": "ISC",
   "author": "BorysovskaOA",
   "type": "module",
-  "main": "dist/app.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "start:prod": "npm run build && node --env-file=.env dist/app.js",
-    "start:dev": "tsx watch --env-file=.env src/app.ts",
+    "start:prod": "npm run build && node --env-file=.env dist/index.js",
+    "start:dev": "tsx watch --env-file=.env src/index.ts",
+    "start:multi": "tsx watch --env-file=.env src/index.cluster.ts",
     "test": "node --import tsx --test test/**/*.test.ts",
     "test:watch": "node --import tsx --test --watch test/**/*.test.ts"
   },

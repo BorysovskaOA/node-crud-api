@@ -25,7 +25,12 @@ process.on("uncaughtException", (error) => {
 const signals: NodeJS.Signals[] = ["SIGINT", "SIGTERM"];
 signals.forEach((signal) => {
   process.on(signal, async () => {
-    await app.close();
-    process.exit(0);
+    try {
+      await app.close();
+      process.exit(0);
+    } catch (err) {
+      console.log("Error while closing", err);
+      process.exit(1);
+    }
   });
 });

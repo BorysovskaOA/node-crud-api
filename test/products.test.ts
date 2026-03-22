@@ -1,7 +1,7 @@
 import { test, describe, beforeEach } from "node:test";
 import assert from "node:assert";
 import createApp from "../src/app.js";
-import ProductORM from "../src/productsState.js";
+import ProductORM from "../src/db/productORM.js";
 import z from "zod";
 import { ProductCategory, ProductData } from "../src/types/product.js";
 
